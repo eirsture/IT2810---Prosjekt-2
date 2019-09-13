@@ -22,6 +22,12 @@ class App extends React.Component {
         <div className="footer">
           <h4>Footer</h4>
         </div>
+        <div className="button-section">
+          <ButtonRow/>
+        </div>
+      </div>
+      <div className="footer">
+        <h4>Footer</h4>
       </div>
     )
   }
