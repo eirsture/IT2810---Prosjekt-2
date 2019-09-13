@@ -1,21 +1,16 @@
-import React from 'react'
-import './Display.css'
-import CustomSvg from './CustomSvg.js'
-import CustomText from './CustomText.js'
-import CustomSound from './CustomSound.js'
-
+import React from 'react';
+import './Display.css';
+import CustomSvg from './CustomSvg.js';
+import CustomText from './CustomText.js';
+import CustomSound from './CustomSound.js';
 
 class Display extends React.Component {
-
-  fetchTestImage = () => {
-     
-  }
   render() {
     return (
       <div className="display">
         <div className="svg-section">
           <h2>SVG</h2>
-          <CustomSvg image={this.fetchTestImage()} />
+          <CustomSvg image={'/cat/cat-45760.svg'} />
         </div>
         <div className="text-section">
           <h2>Text</h2>
@@ -26,8 +21,8 @@ class Display extends React.Component {
           <CustomSound />
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Display
+export default Display;
