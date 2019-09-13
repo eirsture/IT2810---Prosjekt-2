@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {ButtonRow} from "./components/ButtonRow"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <div className="sound-section">
           <h2>Sound</h2>
         </div>
+        <ButtonRow/>
       </div>
       <div className="footer">
         <h4>Footer</h4>
