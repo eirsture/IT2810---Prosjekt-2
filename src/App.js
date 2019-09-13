@@ -1,5 +1,6 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Sidebar from './components/sidebarContent'
 import ButtonRow from './components/ButtonRow'
 import Display from './components/Display'
 
@@ -7,12 +8,10 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <h2>
-          header
-        </h2>
+        <h2>header</h2>
       </header>
       <div className="sidebar">
-        <h2>sidebar</h2>
+          <Sidebar categories={["Cat", "Dog", "Horse"]} />
       </div>
       <div className="content">
         <Display />
