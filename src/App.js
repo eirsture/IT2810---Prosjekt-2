@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import {ButtonRow} from "./components/ButtonRow"
+import ButtonRow from './components/ButtonRow'
+import Display from './components/Display'
 
 function App() {
   return (
@@ -14,15 +15,8 @@ function App() {
         <h2>sidebar</h2>
       </div>
       <div className="content">
-        <div className="svg-section">
-          <h2>SVG</h2>
-        </div>
-        <div className="text-section">
-          <h2>Text</h2>
-        </div>
-        <div className="sound-section">
-          <h2>Sound</h2>
-        </div>
+        <Display />
+        
         <ButtonRow/>
       </div>
       <div className="footer">
