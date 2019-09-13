@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import CategorySelector from './components/categorySelector';
+import Sidebar from './components/sidebarContent';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         </h2>
       </header>
       <div className="sidebar">
-          <CategorySelector />
+          <Sidebar categories={["Cat", "Dog", "Horse"]} />
       </div>
       <div className="content">
         <div className="svg-section">
