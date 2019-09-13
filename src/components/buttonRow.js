@@ -1,23 +1,38 @@
 import React from 'react';
 import "./ButtonRow.css";
+import "./Button.css"
 
 class ButtonRow extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedButton: 1,
+        }
+    }
+
+
+    handleButtonPress = (event) => {
+        this.setState({selectedButton: parseInt(event.currentTarget.id)})
+    }
+
     render() {
     return (
-    <div className="buttons">
-        <div className="button1">
-            <h2>Button 1</h2>
+        <div className="buttons">{
+            [1,2,3,4].map(key => 
+            <div 
+                key= {key}
+                id = {key}
+                className={key === this.state.selectedButton ? "selected button" : "hidden button"}
+                onClick={this.handleButtonPress}
+            >
+                <p className="title">
+                    {key}
+                </p>
+            </div>
+        )
+        }
         </div>
-        <div className="button2">
-            <h2>Button 2</h2>
-        </div>
-        <div className="button3">
-            <h2>Button 3</h2>
-        </div>
-        <div className="button4">
-            <h2>Button 4</h2>
-        </div>
-    </div>
     );
     }
 }

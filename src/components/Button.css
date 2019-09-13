@@ -1,0 +1,20 @@
+
+.title {
+    font-size: 20px;
+}
+
+.button {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;    
+    border-left: 1px solid black;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: beige;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
