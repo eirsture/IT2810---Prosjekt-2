@@ -4,7 +4,7 @@ import Sidebar from './components/sidebarContent'
 import ButtonRow from './components/ButtonRow'
 import Display from './components/Display'
 
-class App extends React.Components {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
