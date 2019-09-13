@@ -5,6 +5,8 @@ import CustomText from './CustomText.js';
 import CustomSound from './CustomSound.js';
 
 class Display extends React.Component {
+  
+  
   render() {
     return (
       <div className="display">
