@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Sidebar from './components/sidebarContent'
-import ButtonRow from './components/ButtonRow'
+import ButtonRow from './components/buttonRow'
 import Display from './components/Display'
 
 class App extends React.Component {
@@ -25,9 +25,9 @@ class App extends React.Component {
         <div className="button-section">
           <ButtonRow/>
         </div>
-      </div>
-      <div className="footer">
-        <h4>Footer</h4>
+        <div className="footer">
+          <h4>Footer</h4>
+        </div>
       </div>
     )
   }
