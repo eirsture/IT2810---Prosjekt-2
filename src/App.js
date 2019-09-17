@@ -15,15 +15,10 @@ class App extends React.Component {
             <Sidebar categories={["Cat", "Dog", "Horse"]} />
         </div>
         <div className="content">
-          <Display />
-          
-          <ButtonRow />
-        </div>
-        <div className="footer">
-          <h4>Footer</h4>
+            <Display />
         </div>
         <div className="button-section">
-          <ButtonRow/>
+            <ButtonRow />
         </div>
         <div className="footer">
           <h4>Footer</h4>

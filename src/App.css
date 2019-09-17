@@ -16,10 +16,15 @@
 
 .content {
   background-color: burlywood;
-  grid-area: 2/2/7/last-line;
+  grid-area: 2/2/8/last-line;
   display: grid;
   grid-template-rows: repeat(8,1fr);
   grid-template-columns: repeat(5,1fr);
+
+}
+
+.button-section {
+grid-area: 8/2/last-line/last-line;
 }
 
 .footer {
@@ -27,9 +32,6 @@
   grid-area: last-line/1/last-line/last-line;
 }
 
-.button-section {
-grid-area: 8/1/last-line/last-line;
-}
 
 
 .App {
@@ -37,7 +39,7 @@ grid-area: 8/1/last-line/last-line;
   min-height: 100vh;
   background-color: black;
   display:grid;
-  grid-template-rows: repeat(6,1fr);
+  grid-template-rows: repeat(8,1fr);
   grid-template-columns: repeat(6,1fr);
 
 }
