@@ -1,22 +1,22 @@
 .display {
   background-color: burlywood;
-  grid-area: 1/1/5/8;
   display: grid;
+  grid-area: 1/1/last-line/last-line;
   grid-template-rows: repeat(8,1fr);
   grid-template-columns: repeat(5,1fr);
 }
 
 .svg-section {
   background-color: coral;
-  grid-area: 1/1/8/4;
+  grid-area: 1/1/last-line/4;
 }
 
 .text-section {
   background-color: saddlebrown;
-  grid-area: 1/4/6/last-line;
+  grid-area: 1/4/last-line/last-line;
 }
 
 .sound-section {
   background-color: mediumaquamarine;
-  grid-area: 6/4/8/last-line;
+  grid-area: 6/4/last-line/last-line;
 }
