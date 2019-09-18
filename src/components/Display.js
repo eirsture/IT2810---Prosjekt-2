@@ -1,11 +1,10 @@
-import React from 'react';
-import './Display.css';
-import CustomSvg from './CustomSvg.js';
-import CustomText from './CustomText.js';
-import CustomSound from './CustomSound.js';
+import React from 'react'
+import './Display.css'
+import CustomSvg from './CustomSvg.js'
+import CustomText from './CustomText.js'
+import CustomSound from './CustomSound.js'
 
 class Display extends React.Component {
-  
   constructor(props) {
     super(props)
     this.state = {
@@ -20,28 +19,27 @@ class Display extends React.Component {
     this.fetchSVG()
     this.fetchAudio()
   }
-  
+
   fetchText(index) {
-    fetch("/cat/poems.json")
+    fetch('/assets/text/cat/poems.json')
       .then(function(response) {
-        return response.json();
+        return response.json()
       })
-      .then((jsonData) => {
-        this.setState({text: jsonData[index].text})
+      .then(jsonData => {
+        this.setState({ text: jsonData[index].text })
       })
   }
 
   fetchSVG() {
-    fetch('/dog/dog-1305702.svg')
+    fetch('/assets/image/dog/4.svg')
       .then(response => response.text())
-      .then(xmlData => this.setState({image: xmlData}))
+      .then(xmlData => this.setState({ image: xmlData }))
   }
 
   fetchAudio() {
-      this.setState({audio: '/cat/333916__thearxx08__cat-meowing.mp3'})
+    this.setState({ audio: '/assets/audio/dog/1.mp3' })
   }
 
-  
   render() {
     return (
       <div className="display">
@@ -55,11 +53,11 @@ class Display extends React.Component {
         </div>
         <div className="sound-section">
           <h2>Sound</h2>
-          <CustomSound sound={this.state.audio}/>
+          <CustomSound sound={this.state.audio} />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Display;
+export default Display
