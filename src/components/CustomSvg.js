@@ -3,9 +3,7 @@ import React from 'react';
 const CustomSvg = ({ image }) => {
   
   return (
-    <div dangerouslySetInnerHTML={{__html: image}}>
-
-    </div>
+    <div dangerouslySetInnerHTML={{__html: image}} />
   )
 }
 

@@ -10,13 +10,15 @@ class Display extends React.Component {
     super(props)
     this.state = {
       text: '',
-      image: ''
+      image: '',
+      audio: ''
     }
   }
 
   componentDidMount() {
     this.fetchText(this.props.textIndex)
     this.fetchSVG()
+    this.fetchAudio()
   }
   
   fetchText(index) {
@@ -35,6 +37,10 @@ class Display extends React.Component {
       .then(xmlData => this.setState({image: xmlData}))
   }
 
+  fetchAudio() {
+      this.setState({audio: '/cat/333916__thearxx08__cat-meowing.mp3'})
+  }
+
   
   render() {
     return (
@@ -49,7 +55,7 @@ class Display extends React.Component {
         </div>
         <div className="sound-section">
           <h2>Sound</h2>
-          <CustomSound sound="cat/333916__thearxx08__cat-meowing.mp3"/>
+          <CustomSound sound={this.state.audio}/>
         </div>
       </div>
     );
