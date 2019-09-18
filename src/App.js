@@ -15,7 +15,7 @@ class App extends React.Component {
             <Sidebar categories={["Cat", "Dog", "Horse"]} />
         </div>
         <div className="content">
-          <Display />
+          <Display textIndex={2}/>
           
           <ButtonRow />
         </div>
