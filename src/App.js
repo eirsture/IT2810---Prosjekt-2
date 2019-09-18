@@ -8,13 +8,23 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      chosenCategories: []
+      chosenCategories: {Image:'', Sound:'', Text:''}
     }
     this.selectedCategory = this.selectedCategory.bind(this)
   }
 
-  selectedCategory = (mediaType, category) => {
-      console.log(mediaType, category)
+  selectedCategory = (mediaType, category) => {  
+    if (mediaType === "Image") {
+      this.setState({chosenCategories: {...this.state.chosenCategories, Image:category}})
+    } else if (mediaType === "Sound") {
+      this.setState({chosenCategories: {...this.state.chosenCategories, Sound:category}})
+    } else if (mediaType === "Text") {
+      this.setState({chosenCategories: {...this.state.chosenCategories, Text:category}})
+    }
+  }
+
+  componentDidUpdate= () => {
+    console.log(this.state.chosenCategories)
   }
   
   render() {
