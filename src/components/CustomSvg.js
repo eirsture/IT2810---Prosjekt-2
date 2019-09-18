@@ -1,11 +1,10 @@
 import React from 'react';
 
-const Svg = ({ image }) => {
+const CustomSvg = ({ image }) => {
+  
   return (
-    <div>
-      <img src={image} alt="cat"></img>
-    </div>)
-  ;
-};
+    <div dangerouslySetInnerHTML={{__html: image}} />
+  )
+}
 
-export default Svg;
+export default CustomSvg;
