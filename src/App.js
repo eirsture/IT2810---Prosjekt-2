@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Sidebar from './components/sidebarContent'
-import ButtonRow from './components/ButtonRow'
+import ButtonRow from './components/buttonRow'
 import Display from './components/Display'
 
 class App extends React.Component {
@@ -15,7 +15,7 @@ class App extends React.Component {
             <Sidebar categories={["Cat", "Dog", "Horse"]} />
         </div>
         <div className="content">
-          <Display />
+          <Display textIndex={2}/>
           
           <ButtonRow />
         </div>
