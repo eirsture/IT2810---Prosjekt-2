@@ -38,11 +38,6 @@ class App extends React.Component {
         </div>
         <div className="content">
           <Display textIndex={2}/>
-          
-          <ButtonRow />
-        </div>
-        <div className="footer">
-          <h4>Footer</h4>
         </div>
         <div className="button-section">
             <ButtonRow />
