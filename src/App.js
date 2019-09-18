@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Sidebar from './components/sidebarContent'
-import ButtonRow from './components/buttonRow'
+import ButtonRow from './components/ButtonRow'
 import Display from './components/Display'
 
 class App extends React.Component {

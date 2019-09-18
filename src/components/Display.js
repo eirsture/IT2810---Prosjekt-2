@@ -9,12 +9,14 @@ class Display extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      text: ""
+      text: '',
+      image: ''
     }
   }
 
   componentDidMount() {
     this.fetchText(this.props.textIndex)
+    this.fetchSVG()
   }
   
   fetchText(index) {
@@ -27,13 +29,19 @@ class Display extends React.Component {
       })
   }
 
+  fetchSVG() {
+    fetch('/dog/dog-1305702.svg')
+      .then(response => response.text())
+      .then(xmlData => this.setState({image: xmlData}))
+  }
+
   
   render() {
     return (
       <div className="display">
         <div className="svg-section">
           <h2>SVG</h2>
-          <CustomSvg image={'/cat/cat-45760.svg'} />
+          <CustomSvg image={this.state.image} />
         </div>
         <div className="text-section">
           <h2>Text</h2>
