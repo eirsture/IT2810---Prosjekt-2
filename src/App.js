@@ -5,6 +5,18 @@ import ButtonRow from './components/ButtonRow'
 import Display from './components/Display'
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      chosenCategories: []
+    }
+    this.selectedCategory = this.selectedCategory.bind(this)
+  }
+
+  selectedCategory = (mediaType, category) => {
+      console.log(mediaType, category)
+  }
+  
   render() {
     return (
       <div className="App">
@@ -12,7 +24,7 @@ class App extends React.Component {
           <h2>header</h2>
         </header>
         <div className="sidebar">
-            <Sidebar categories={["Cat", "Dog", "Horse"]} />
+            <Sidebar categories={["Cat", "Dog", "Horse"]} selectedCategory={this.selectedCategory} />
         </div>
         <div className="content">
           <Display textIndex={2}/>
