@@ -33,13 +33,15 @@ class Display extends React.Component {
   }
 
   fetchText(index, category) {
-    fetch(`/assets/text/${category.toLowerCase()}/text.json`)
+    if (category) {
+      fetch(`/assets/text/${category.toLowerCase()}/text.json`)
       .then(function(response) {
         return response.json()
       })
       .then(jsonData => {
         this.setState({ text: jsonData[index].text })
       })
+    }
   }
 
   fetchSVG(index, category) {
