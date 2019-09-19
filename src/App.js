@@ -5,22 +5,57 @@ import ButtonRow from './components/ButtonRow'
 import Display from './components/Display'
 
 class App extends React.Component {
+
+  expandSidebar = () => {
+    var sidebar = document.getElementById("sidebar");
+    var sidebarButton = document.getElementById("sidebarButton");
+    var burgerButton = document.getElementById("closeButton");
+    sidebar.style.display = "inline";
+    burgerButton.style.display = "inline";
+    sidebarButton.style.display = "none";
+    
+  }
+
+  closeSidebar = () => {
+    var sidebar = document.getElementById("sidebar");
+    var sidebarButton = document.getElementById("sidebarButton");
+    var closeButton = document.getElementById("closeButton");
+    sidebar.style.display = "none";
+    closeButton.style.display = "none";
+    sidebarButton.style.display = "inline";
+
+    sidebarButton.style.cssText = '';
+    sidebar.style.cssText = '';
+  }
+
+
+
   render() {
     return (
       <div className="App">
-        <header className="header">
+        <header id="header">
+          <div id="sidebarButton" onClick={this.expandSidebar} >
+            <svg width="40" height="40" viewBox="0 0 21 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0.195312H20.4286V2.36198H0V0.195312ZM0 5.61198H20.4286V7.77865H0V5.61198ZM0 11.0286H20.4286V13.1953H0V11.0286Z" fill="#686B6F"/>
+            </svg>
+          </div>
+          <div id="closeButton" onClick={this.closeSidebar}>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27 14.6053L25.59 13.1953L20 18.7853L14.41 13.1953L13 14.6053L18.59 20.1953L13 25.7853L14.41 27.1953L20 21.6053L25.59 27.1953L27 25.7853L21.41 20.1953L27 14.6053Z" fill="#CF2A2A"/>
+            </svg>
+          </div>
           <h2>header</h2>
         </header>
-        <div className="sidebar">
+        <div id="sidebar" >
             <Sidebar categories={["Cat", "Dog", "Horse"]} />
         </div>
-        <div className="content">
+        <div id="content">
             <Display />
         </div>
-        <div className="button-section">
+        <div id="button-section">
             <ButtonRow />
         </div>
-        <div className="footer">
+        <div id="footer">
           <h4>Footer</h4>
         </div>
       </div>
