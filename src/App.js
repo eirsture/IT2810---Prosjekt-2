@@ -8,24 +8,27 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      chosenCategories: {Image:'', Sound:'', Text:''}
+      chosenCategories: {Image:'cat', Sound:'cat', Text:'cat'},
+      indices: {imageIndex: 0, soundIndex: 0, textIndex: 0}
     }
     this.selectedCategory = this.selectedCategory.bind(this)
   }
 
+  generateRandomIndex = () => {
+    return Math.floor(Math.random() * 4)
+  }
+
   selectedCategory = (mediaType, category) => {  
+    const index = this.generateRandomIndex()
     if (mediaType === "Image") {
-      this.setState({chosenCategories: {...this.state.chosenCategories, Image:category}})
+      this.setState({chosenCategories: {...this.state.chosenCategories, Image:category}, indices: {...this.state.indices, imageIndex:index}})
     } else if (mediaType === "Sound") {
-      this.setState({chosenCategories: {...this.state.chosenCategories, Sound:category}})
+      this.setState({chosenCategories: {...this.state.chosenCategories, Sound:category}, indices: {...this.state.indices, soundIndex:index}})
     } else if (mediaType === "Text") {
-      this.setState({chosenCategories: {...this.state.chosenCategories, Text:category}})
+      this.setState({chosenCategories: {...this.state.chosenCategories, Text:category}, indices: {...this.state.indices, textIndex: index}})
     }
   }
 
-  componentDidUpdate= () => {
-    console.log(this.state.chosenCategories)
-  }
   
   render() {
     return (
@@ -34,13 +37,20 @@ class App extends React.Component {
           <h2>header</h2>
         </header>
         <div className="sidebar">
-            <Sidebar categories={["Cat", "Dog", "Horse"]} selectedCategory={this.selectedCategory} />
+          <Sidebar categories={["Cat", "Dog", "Horse"]} selectedCategory={this.selectedCategory} />
         </div>
         <div className="content">
-          <Display textIndex={2}/>
+          <Display 
+            textIndex={this.state.indices.textIndex} 
+            textCategory={this.state.chosenCategories.Text} 
+            SVGIndex={this.state.indices.imageIndex}
+            SVGCategory={this.state.chosenCategories.Image} 
+            audioIndex={this.state.indices.soundIndex}
+            audioCategory={this.state.chosenCategories.Sound}
+          />
         </div>
         <div className="button-section">
-            <ButtonRow />
+          <ButtonRow />
         </div>
         <div className="footer">
           <h4>Footer</h4>
