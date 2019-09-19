@@ -2,8 +2,8 @@
   background-color: burlywood;
   display: grid;
   grid-area: 1/1/last-line/last-line;
-  grid-template-rows: repeat(8,1fr);
   grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(8,1fr);
 }
 
 .svg-section {
@@ -19,4 +19,26 @@
 .sound-section {
   background-color: mediumaquamarine;
   grid-area: 6/4/last-line/last-line;
+}
+
+@media only screen and (max-width: 800px){
+
+  .display {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 200px 150px;
+  }
+
+  .svg-section {
+    grid-area: 1/1/2/1;
+  }
+
+  .text-section {
+    grid-area: 2/1/3/1;
+  }
+  
+  .sound-section {
+    grid-area: 3/1/4/1;
+  }
+  
+
 }
