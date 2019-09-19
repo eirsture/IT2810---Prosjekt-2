@@ -33,7 +33,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      chosenCategories: {Image:'cat', Sound:'cat', Text:'cat'},
+      chosenCategories: {Image:'', Sound:'', Text:'' },
       indices: {imageIndex: 0, soundIndex: 0, textIndex: 0},
       selectedTab: 1
     }
@@ -45,6 +45,7 @@ class App extends React.Component {
 
   selectedTab = (tab) => {
     this.setState({selectedTab: tab})
+    this.saveStateToLocalStorage(this.state)
   }
 
   selectedCategory = (mediaType, category) => {  
@@ -58,8 +59,31 @@ class App extends React.Component {
     }
   }
 
+  saveStateToLocalStorage = (state) => {
+    localStorage.setItem("state", state)
+  }
+
+  componentDidMount = () => {
+    const locallyStorage = JSON.parse(localStorage.getItem("state"))
+    try {
+      this.setState({chosenCategories: locallyStorage.chosenCategories})
+      this.setState({indices: locallyStorage.indices})
+      this.setState({selectedTab: locallyStorage.tab})
+    } catch (error) {
+      console.log("Error when parsing localStorage state")
+      this.setState({chosenCategories: {Image:'Cat', Sound:'Cat', Text:'Cat'} })
+      this.setState({indices: {imageIndex: 0, soundIndex: 0, textIndex: 0} })
+      this.setState({selectedTab: 1})
+    }
+  }
+
+  componentDidUpdate = () => {
+    this.saveStateToLocalStorage(JSON.stringify(this.state))
+  }
+
   
   render() {
+    //console.log(this.state)
     return (
       <div className="App">
         <header id="header">

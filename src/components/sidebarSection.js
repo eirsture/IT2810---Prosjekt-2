@@ -12,6 +12,19 @@ class SidebarSection extends React.Component {
     categoryChanged = (e) => {
         this.setState({ selectedCategory: e.currentTarget.value})
         this.props.selectedCategory(this.props.title, e.currentTarget.value)
+        this.saveToLocalStorage(e.currentTarget.value)
+    }
+
+    saveToLocalStorage = (category) => {
+        localStorage.setItem(this.props.title, category)
+    }
+
+    componentDidMount() {
+        const locallyStoredCategory = localStorage.getItem(this.props.title)
+        if (locallyStoredCategory) {
+            this.setState({ selectedCategory: locallyStoredCategory})
+        }
+
     }
     
     render() {
