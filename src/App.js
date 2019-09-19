@@ -14,6 +14,10 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.generateTab()
+  }
+
   generateTab = () => {
     const currentImageIndex = this.state.indices.imageIndex
     let newImageIndex = this.generateRandomIndex()
