@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "source": "http://www.sciencekids.co.nz/sciencefacts/animals/cat.html",
+    "text": "The heaviest domestic cat on record is 21.297 kilograms."
+  },
+  {
+    "id": 2,
+    "source": "http://www.sciencekids.co.nz/sciencefacts/animals/cat.html",
+    "text": "Cats spend a large amount of time licking their coats to keep them clean."
+  },
+  {
+    "id": 3,
+    "source": "https://coleandmarmalade.com/2018/12/31/25-interesting-facts-about-cats-you-may-not-have-known/",
+    "text": "Sir Isaac Newton is credited with creating the concept for the pet door that many cats use today to travel outdoors."
+  },
+  {
+    "id": 4,
+    "source": "https://coleandmarmalade.com/2018/12/31/25-interesting-facts-about-cats-you-may-not-have-known/",
+    "text": "A cat only has the ability to move their jaw up and down, not side to side like a human can."
+  }
+]

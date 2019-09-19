@@ -30,6 +30,35 @@ class App extends React.Component {
 
 
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      chosenCategories: {Image:'cat', Sound:'cat', Text:'cat'},
+      indices: {imageIndex: 0, soundIndex: 0, textIndex: 0},
+      selectedTab: 1
+    }
+  }
+
+  generateRandomIndex = () => {
+    return Math.floor(Math.random() * 4)
+  }
+
+  selectedTab = (tab) => {
+    this.setState({selectedTab: tab})
+  }
+
+  selectedCategory = (mediaType, category) => {  
+    const index = this.generateRandomIndex()
+    if (mediaType === "Image") {
+      this.setState({chosenCategories: {...this.state.chosenCategories, Image:category}, indices: {...this.state.indices, imageIndex:index}})
+    } else if (mediaType === "Sound") {
+      this.setState({chosenCategories: {...this.state.chosenCategories, Sound:category}, indices: {...this.state.indices, soundIndex:index}})
+    } else if (mediaType === "Text") {
+      this.setState({chosenCategories: {...this.state.chosenCategories, Text:category}, indices: {...this.state.indices, textIndex: index}})
+    }
+  }
+
+  
   render() {
     return (
       <div className="App">
@@ -46,14 +75,21 @@ class App extends React.Component {
           </div>
           <h2>header</h2>
         </header>
-        <div id="sidebar" >
-            <Sidebar categories={["Cat", "Dog", "Horse"]} />
+        <div className="sidebar">
+          <Sidebar categories={["Cat", "Dog", "Horse"]} selectedCategory={this.selectedCategory} />
         </div>
-        <div id="content">
-            <Display />
+        <div className="content">
+          <Display 
+            textIndex={this.state.indices.textIndex} 
+            textCategory={this.state.chosenCategories.Text} 
+            SVGIndex={this.state.indices.imageIndex}
+            SVGCategory={this.state.chosenCategories.Image} 
+            audioIndex={this.state.indices.soundIndex}
+            audioCategory={this.state.chosenCategories.Sound}
+          />
         </div>
-        <div id="button-section">
-            <ButtonRow />
+        <div className="button-section">
+          <ButtonRow selectedTab={this.selectedTab} />
         </div>
         <div id="footer">
           <h4>Footer</h4>

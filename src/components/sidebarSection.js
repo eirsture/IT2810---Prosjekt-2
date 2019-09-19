@@ -11,6 +11,7 @@ class SidebarSection extends React.Component {
 
     categoryChanged = (e) => {
         this.setState({ selectedCategory: e.currentTarget.value})
+        this.props.selectedCategory(this.props.title, e.currentTarget.value)
     }
     
     render() {

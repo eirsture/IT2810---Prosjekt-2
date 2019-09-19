@@ -14,6 +14,7 @@ class ButtonRow extends React.Component {
 
     handleButtonPress = (event) => {
         this.setState({selectedButton: parseInt(event.currentTarget.id)})
+        this.props.selectedTab(parseInt(event.currentTarget.id))
     }
 
     render() {
