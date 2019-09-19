@@ -56,7 +56,6 @@ class Display extends React.Component {
     return (
       <div className="display">
         <div className="svg-section">
-          <h2>SVG</h2>
           <CustomSvg image={this.state.image} />
         </div>
         <div className="text-section">
