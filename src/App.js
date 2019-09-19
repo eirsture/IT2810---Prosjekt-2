@@ -9,13 +9,17 @@ class App extends React.Component {
     super(props)
     this.state = {
       chosenCategories: {Image:'cat', Sound:'cat', Text:'cat'},
-      indices: {imageIndex: 0, soundIndex: 0, textIndex: 0}
+      indices: {imageIndex: 0, soundIndex: 0, textIndex: 0},
+      selectedTab: 1
     }
-    this.selectedCategory = this.selectedCategory.bind(this)
   }
 
   generateRandomIndex = () => {
     return Math.floor(Math.random() * 4)
+  }
+
+  selectedTab = (tab) => {
+    this.setState({selectedTab: tab})
   }
 
   selectedCategory = (mediaType, category) => {  
@@ -50,7 +54,7 @@ class App extends React.Component {
           />
         </div>
         <div className="button-section">
-          <ButtonRow />
+          <ButtonRow selectedTab={this.selectedTab} />
         </div>
         <div className="footer">
           <h4>Footer</h4>
