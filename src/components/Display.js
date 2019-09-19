@@ -19,16 +19,37 @@ class Display extends React.Component {
     this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
     this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
   }
-
+  
   componentDidUpdate(prevProps) {
-    if (prevProps.textIndex !== this.props.textIndex || prevProps.textCategory !== this.props.textCategory) {
-      this.fetchText(this.props.textIndex, this.props.textCategory)
-    }
-    if (prevProps.SVGIndex !== this.props.SVGIndex || prevProps.SVGCategory !== this.props.SVGCategory) {
-      this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
-    }
-    if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
-      this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
+    if (prevProps.tabId !== this.props.tabId) {
+      // Switched tabs
+      const response = this.retrieveFromStorage()
+      console.log(response)
+      if (response) {
+        this.setState({text: response.text, image: response.image, audio: response.audio})
+      } else {
+        if (prevProps.textIndex !== this.props.textIndex || prevProps.textCategory !== this.props.textCategory) {
+          this.fetchText(this.props.textIndex, this.props.textCategory)
+        }
+        if (prevProps.SVGIndex !== this.props.SVGIndex || prevProps.SVGCategory !== this.props.SVGCategory) {
+          this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
+        }
+        if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
+          this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
+        }
+        this.saveToStorage()
+      }
+    } else {
+      if (prevProps.textIndex !== this.props.textIndex || prevProps.textCategory !== this.props.textCategory) {
+        this.fetchText(this.props.textIndex, this.props.textCategory)
+      }
+      if (prevProps.SVGIndex !== this.props.SVGIndex || prevProps.SVGCategory !== this.props.SVGCategory) {
+        this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
+      }
+      if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
+        this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
+      }
+      this.saveToStorage()
     }
   }
 
@@ -50,6 +71,21 @@ class Display extends React.Component {
 
   fetchAudio(index, category) {
     this.setState({ audio: `/assets/audio/${category.toLowerCase()}/${index + 1}.mp3` })
+  }
+
+  saveToStorage() {
+    let data = {
+      text: this.state.text,
+      image: this.state.image,
+      audio: this.state.audio
+    }
+    sessionStorage.setItem(this.props.tabId.toString(), JSON.stringify(data))
+  }
+
+  retrieveFromStorage() {
+    const response_str = sessionStorage.getItem(this.props.tabId)
+    const response = JSON.parse(response_str)
+    return response
   }
 
   render() {

@@ -76,6 +76,7 @@ class App extends React.Component {
             SVGCategory={this.state.chosenCategories.Image} 
             audioIndex={this.state.indices.soundIndex}
             audioCategory={this.state.chosenCategories.Sound}
+            tabId={this.state.selectedTab}
           />
         </div>
         <div className="button-section">
