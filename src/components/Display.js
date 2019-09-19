@@ -81,7 +81,11 @@ class Display extends React.Component {
       image: this.state.image,
       audio: this.state.audio
     }
-    sessionStorage.setItem(this.props.tabId.toString(), JSON.stringify(data))
+    if (this.props.tabId) {
+      sessionStorage.setItem(this.props.tabId.toString(), JSON.stringify(data))
+    } else {
+      //console.log("tabID undefined", this.props.tabId)
+    }
   }
 
   retrieveFromStorage() {
