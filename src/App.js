@@ -19,7 +19,7 @@ class App extends React.Component {
   }
 
   selectedTab = (tab) => {
-      this.setState({selectedTab: tab})
+    this.setState({selectedTab: tab})
   }
 
   selectedCategory = (mediaType, category) => {  
