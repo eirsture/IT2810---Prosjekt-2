@@ -33,7 +33,7 @@ class Display extends React.Component {
   }
 
   fetchText(index, category) {
-    fetch(`/assets/text/${category.toLowerCase()}/poems.json`)
+    fetch(`/assets/text/${category.toLowerCase()}/text.json`)
       .then(function(response) {
         return response.json()
       })
