@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "source": "http://www.sciencekids.co.nz/sciencefacts/animals/horse.html",
+    "text": "Horses can sleep both lying down and standing up."
+  },
+  {
+    "id": 2,
+    "source": "http://www.sciencekids.co.nz/sciencefacts/animals/horse.html",
+    "text": "Horses have bigger eyes than any other mammal that lives on land."
+  },
+  {
+    "id": 3,
+    "source": "https://www.doubledtrailers.com/45-random-amazing-bizarre-horse-facts/",
+    "text": "Horse hooves are made from the same protein that comprises human hair and fingernails"
+  },
+  {
+    "id": 4,
+    "source": "https://www.doubledtrailers.com/45-random-amazing-bizarre-horse-facts/",
+    "text": "Horses can not vomit."
+  }
+]
