@@ -48,6 +48,7 @@ class App extends React.Component {
   }
 
   selectedCategory = (mediaType, category) => {  
+    sessionStorage.clear()
     const index = this.generateRandomIndex()
     if (mediaType === "Image") {
       this.setState({chosenCategories: {...this.state.chosenCategories, Image:category}, indices: {...this.state.indices, imageIndex:index}})
