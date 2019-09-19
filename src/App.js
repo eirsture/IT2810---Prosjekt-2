@@ -14,12 +14,37 @@ class App extends React.Component {
     }
   }
 
+  generateTab = () => {
+    const currentImageIndex = this.state.indices.imageIndex
+    let newImageIndex = this.generateRandomIndex()
+    while (newImageIndex === currentImageIndex) {
+      newImageIndex = this.generateRandomIndex()
+    }
+
+    const currentTextIndex = this.state.indices.textIndex
+    let newTextIndex = this.generateRandomIndex()
+    while (newTextIndex === currentTextIndex) {
+      newTextIndex = this.generateRandomIndex()
+    }
+
+    const currentSoundIndex = this.state.indices.soundIndex
+    let newSoundIndex = this.generateRandomIndex()
+    while (newSoundIndex === currentSoundIndex) {
+      newSoundIndex = this.generateRandomIndex()
+    }
+
+    this.setState({indices: {...this.state.indices, imageIndex: newImageIndex, textIndex: newTextIndex, soundIndex: newSoundIndex}})
+  }
+
   generateRandomIndex = () => {
     return Math.floor(Math.random() * 4)
   }
 
   selectedTab = (tab) => {
-    this.setState({selectedTab: tab})
+    if (tab !== this.state.selectedTab) {
+      this.setState({selectedTab: tab})
+      this.generateTab()
+    }
   }
 
   selectedCategory = (mediaType, category) => {  
