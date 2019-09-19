@@ -15,13 +15,25 @@ class Display extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchText(this.props.textIndex)
-    this.fetchSVG()
-    this.fetchAudio()
+    this.fetchText(this.props.textIndex, this.props.textCategory)
+    this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
+    this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
   }
 
-  fetchText(index) {
-    fetch('/assets/text/cat/poems.json')
+  componentDidUpdate(prevProps) {
+    if (prevProps.textIndex !== this.props.textIndex || prevProps.textCategory !== this.props.textCategory) {
+      this.fetchText(this.props.textIndex, this.props.textCategory)
+    }
+    if (prevProps.SVGIndex !== this.props.SVGIndex || prevProps.SVGCategory !== this.props.SVGCategory) {
+      this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
+    }
+    if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
+      this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
+    }
+  }
+
+  fetchText(index, category) {
+    fetch(`/assets/text/${category.toLowerCase()}/text.json`)
       .then(function(response) {
         return response.json()
       })
@@ -30,21 +42,20 @@ class Display extends React.Component {
       })
   }
 
-  fetchSVG() {
-    fetch('/assets/image/dog/4.svg')
+  fetchSVG(index, category) {
+    fetch(`/assets/image/${category.toLowerCase()}/${index + 1}.svg`)
       .then(response => response.text())
       .then(xmlData => this.setState({ image: xmlData }))
   }
 
-  fetchAudio() {
-    this.setState({ audio: '/assets/audio/dog/1.mp3' })
+  fetchAudio(index, category) {
+    this.setState({ audio: `/assets/audio/${category.toLowerCase()}/${index + 1}.mp3` })
   }
 
   render() {
     return (
       <div className="display">
         <div className="svg-section">
-          <h2>SVG</h2>
           <CustomSvg image={this.state.image} />
         </div>
         <div className="text-section">
