@@ -75,10 +75,10 @@ class App extends React.Component {
           </div>
           <h2>header</h2>
         </header>
-        <div className="sidebar">
+        <div id="sidebar">
           <Sidebar categories={["Cat", "Dog", "Horse"]} selectedCategory={this.selectedCategory} />
         </div>
-        <div className="content">
+        <div id="content">
           <Display 
             textIndex={this.state.indices.textIndex} 
             textCategory={this.state.chosenCategories.Text} 
@@ -88,7 +88,7 @@ class App extends React.Component {
             audioCategory={this.state.chosenCategories.Sound}
           />
         </div>
-        <div className="button-section">
+        <div id="button-section">
           <ButtonRow selectedTab={this.selectedTab} />
         </div>
         <div id="footer">
