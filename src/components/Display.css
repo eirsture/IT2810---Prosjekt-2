@@ -2,7 +2,7 @@
   background-color: white;
   display: grid;
   grid-area: 1/1/last-line/last-line;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(4,1fr);
   grid-template-rows: repeat(8,1fr);
   margin: 20px;
   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.5);
@@ -10,19 +10,28 @@
 
 .svg-section {
   background-color: coral;
-  grid-area: 1/1/last-line/4;
+  grid-area: 1/1/7/last-line;
 }
 
 .text-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: coral;
-  grid-area: 1/4/last-line/last-line;
+  grid-area: 7/1/last-line/3;
   padding: 20px;
 }
 
 .sound-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: coral;
-  padding: 20px;
-  grid-area: 6/4/last-line/last-line;
+  grid-area: 7/3/last-line/last-line;
+}
+
+audio {
+  width: 250px;
 }
 
 @media only screen and (max-width: 800px){
