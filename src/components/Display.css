@@ -1,9 +1,11 @@
 .display {
-  background-color: burlywood;
+  background-color: white;
   display: grid;
   grid-area: 1/1/last-line/last-line;
   grid-template-columns: repeat(5,1fr);
   grid-template-rows: repeat(8,1fr);
+  margin: 20px;
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.5);
 }
 
 .svg-section {
@@ -12,12 +14,14 @@
 }
 
 .text-section {
-  background-color: saddlebrown;
+  background-color: coral;
   grid-area: 1/4/last-line/last-line;
+  padding: 20px;
 }
 
 .sound-section {
-  background-color: mediumaquamarine;
+  background-color: coral;
+  padding: 20px;
   grid-area: 6/4/last-line/last-line;
 }
 
@@ -26,6 +30,7 @@
   .display {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 200px 150px;
+    margin: 0;
   }
 
   .svg-section {

@@ -1,16 +1,16 @@
 
 #header {
-  background-color: orange;
+  background-color: white;
+  display: flex;
   align-items: center;
   justify-content: center;
   color: black;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   grid-area: 1/1/1/last-line;
 }
 
 #sidebar {
-  background-color:grey;
-  grid-area: 2/1/last-line/1;
+  background-color:white;
+  grid-area: 2/1/8/1;
   display: inline;
   
 }
@@ -20,7 +20,6 @@
 }
 
 #content {
-  background-color: burlywood;
   grid-area: 2/2/8/last-line;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -29,12 +28,7 @@
 }
 
 #button-section {
-grid-area: 8/2/last-line/last-line;
-}
-
-#footer {
-  background-color: azure;
-  grid-area: last-line/1/last-line/last-line;
+grid-area: 8/1/last-line/last-line;
 }
 
 #closeButton {
@@ -54,12 +48,10 @@ grid-area: 8/2/last-line/last-line;
   left:0;
 }
 
-
-
 .App {
   text-align: center;
   min-height: 100vh;
-  background-color: black;
+  background-color: white;
   display:grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(8,1fr);
@@ -120,15 +112,6 @@ grid-area: 8/2/last-line/last-line;
     top: 10px;
     left: 10px;
   }
-
-
-  #footer {
-    grid-area: 4/1/4/1;
-  }
-
-
-
-
 }
 
 
