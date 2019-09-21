@@ -11,7 +11,6 @@ class ButtonRow extends React.Component {
         }
     }
 
-
     handleButtonPress = (event) => {
         this.setState({selectedButton: parseInt(event.currentTarget.id)})
         this.props.selectedTab(parseInt(event.currentTarget.id))
@@ -30,7 +29,10 @@ class ButtonRow extends React.Component {
     }
 
     render() {
+<<<<<<< Updated upstream
         console.log("Inside render method", this.state.selectedButton)
+=======
+>>>>>>> Stashed changes
     return (
         <div className="buttons">{
             [1,2,3,4].map(key => 
