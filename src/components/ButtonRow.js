@@ -25,13 +25,12 @@ class ButtonRow extends React.Component {
     componentDidMount = () => {
         const locallyStoredId = localStorage.getItem('selectedTab')
         if (locallyStoredId) {
-            this.setState({ selectedButton: locallyStoredId})
+            this.setState({ selectedButton: parseInt(locallyStoredId)})
         }
-        console.log(locallyStoredId)
     }
 
     render() {
-        console.log(this.state.selectedButton)
+        console.log("Inside render method", this.state.selectedButton)
     return (
         <div className="buttons">{
             [1,2,3,4].map(key => 
