@@ -61,13 +61,17 @@ class Display extends React.Component {
   }
 
   fetchImage(index, category) {
-    fetch(`/assets/image/${category.toLowerCase()}/${index + 1}.svg`)
-      .then(response => response.text())
-      .then(xmlData => this.setState({ image: xmlData }))
+    if (category) {
+      fetch(`/assets/image/${category.toLowerCase()}/${index + 1}.svg`)
+        .then(response => response.text())
+        .then(xmlData => this.setState({ image: xmlData }))
+    }
   }
 
   fetchSound(index, category) {
-    this.setState({ sound: `/assets/sound/${category.toLowerCase()}/${index + 1}.mp3` })
+    if (category) {
+      this.setState({ sound: `/assets/sound/${category.toLowerCase()}/${index + 1}.mp3` })
+    }
   }
 
   saveToStorage() {

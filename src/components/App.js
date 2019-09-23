@@ -91,7 +91,7 @@ class App extends React.Component {
     try {
       this.setState({chosenCategories: locallyStorage.chosenCategories})
       this.setState({indices: locallyStorage.indices})
-      this.setState({selectedTab: locallyStorage.tab})
+      this.setState({selectedTab: locallyStorage.selectedTab})
     } catch (error) {
       console.log("Error when parsing localStorage state")
       this.setState({chosenCategories: {Image:'Cat', Sound:'Cat', Text:'Cat'} })
