@@ -5,15 +5,23 @@ import ButtonRow from './components/ButtonRow'
 import Display from './components/Display'
 
 class App extends React.Component {
+  
+  constructor(props) {
+    super(props)
+    this.state = {
+      chosenCategories: {Image:'', Sound:'', Text:'' },
+      indices: {imageIndex: 0, soundIndex: 0, textIndex: 0},
+      selectedTab: 1
+    }
+  }
 
   expandSidebar = () => {
     var sidebar = document.getElementById("sidebar");
     var sidebarButton = document.getElementById("sidebarButton");
-    var burgerButton = document.getElementById("closeButton");
+    var closeButton = document.getElementById("closeButton");
     sidebar.style.display = "inline";
-    burgerButton.style.display = "inline";
+    closeButton.style.display = "inline";
     sidebarButton.style.display = "none";
-    
   }
 
   closeSidebar = () => {
@@ -26,17 +34,6 @@ class App extends React.Component {
 
     sidebarButton.style.cssText = '';
     sidebar.style.cssText = '';
-  }
-
-
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      chosenCategories: {Image:'', Sound:'', Text:'' },
-      indices: {imageIndex: 0, soundIndex: 0, textIndex: 0},
-      selectedTab: 1
-    }
   }
 
   generateTab = () => {
@@ -107,9 +104,7 @@ class App extends React.Component {
     this.saveStateToLocalStorage(JSON.stringify(this.state))
   }
 
-  
   render() {
-    //console.log(this.state)
     return (
       <div className="App">
         <header id="header">

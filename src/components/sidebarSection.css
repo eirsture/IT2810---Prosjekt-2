@@ -11,7 +11,7 @@ h3 {
     text-align: left;
     padding: 0 1em;
     background-color: white;
-    margin: 10px;
+    margin: 10px 0;
     padding: 5px 0;
     border-radius: 10px;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
@@ -39,7 +39,6 @@ label {
 input {
     visibility: hidden;
     margin: 1em;
-    background-color: yellow;
 }
 
 .wrapper {

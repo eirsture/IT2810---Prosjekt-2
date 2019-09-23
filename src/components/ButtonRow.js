@@ -11,7 +11,6 @@ class ButtonRow extends React.Component {
         }
     }
 
-
     handleButtonPress = (event) => {
         this.setState({selectedButton: parseInt(event.currentTarget.id)})
         this.props.selectedTab(parseInt(event.currentTarget.id))
@@ -30,24 +29,23 @@ class ButtonRow extends React.Component {
     }
 
     render() {
-        console.log("Inside render method", this.state.selectedButton)
-    return (
-        <div className="buttons">{
-            [1,2,3,4].map(key => 
-            <div 
-                key= {key}
-                id = {key}
-                className={key === this.state.selectedButton ? "selected button" : "hidden button"}
-                onClick={this.handleButtonPress}
-            >
-                <p className="title">
-                    {key}
-                </p>
+        return (
+            <div className="buttons">{
+                [1,2,3,4].map(key => 
+                <div 
+                    key= {key}
+                    id = {key}
+                    className={key === this.state.selectedButton ? "selected button" : "hidden button"}
+                    onClick={this.handleButtonPress}
+                >
+                    <p className="title">
+                        {key}
+                    </p>
+                </div>
+                )
+            }
             </div>
-        )
-        }
-        </div>
-    );
+        );
     }
 }
 
