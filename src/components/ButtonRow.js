@@ -11,30 +11,41 @@ class ButtonRow extends React.Component {
         }
     }
 
-
     handleButtonPress = (event) => {
         this.setState({selectedButton: parseInt(event.currentTarget.id)})
         this.props.selectedTab(parseInt(event.currentTarget.id))
+        this.saveToLocalStorage(event.currentTarget.id)
+    }
+
+    saveToLocalStorage = (id) => {
+        localStorage.setItem('selectedTab', id)
+    }
+
+    componentDidMount = () => {
+        const locallyStoredId = localStorage.getItem('selectedTab')
+        if (locallyStoredId) {
+            this.setState({ selectedButton: parseInt(locallyStoredId)})
+        }
     }
 
     render() {
-    return (
-        <div className="buttons">{
-            [1,2,3,4].map(key => 
-            <div 
-                key= {key}
-                id = {key}
-                className={key === this.state.selectedButton ? "selected button" : "hidden button"}
-                onClick={this.handleButtonPress}
-            >
-                <p className="title">
-                    {key}
-                </p>
+        return (
+            <div className="buttons">{
+                [1,2,3,4].map(key => 
+                <div 
+                    key= {key}
+                    id = {key}
+                    className={key === this.state.selectedButton ? "selected button" : "hidden button"}
+                    onClick={this.handleButtonPress}
+                >
+                    <p className="title">
+                        {key}
+                    </p>
+                </div>
+                )
+            }
             </div>
-        )
-        }
-        </div>
-    );
+        );
     }
 }
 
