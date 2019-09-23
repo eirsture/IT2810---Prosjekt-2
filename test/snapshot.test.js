@@ -1,11 +1,56 @@
-import ButtonRow from "../src/components/ButtonRow.js";
-import ShallowRenderer from 'react-test-renderer/shallow'
+import React from 'react'
+import renderer from 'react-test-renderer';
+import { create, act } from "react-test-renderer";
+import App from "../src/App.js";
+import CustomSvg from '../src/components/CustomSvg.js';
+import ButtonRow from '../src/components/ButtonRow.js';
+import SidebarContent from '../src/components/sidebarContent.js';
+import SidebarSection from '../src/components/sidebarSection.js';
 
-const renderer = new ShallowRenderer();
+describe("Button Row component", ()=> {
+it('renders correctly', () => {
+    const tree = renderer
+      .create(<ButtonRow/>)
+      .toJSON();
+    console.log(tree)
+    expect(tree).toMatchSnapshot();
+  });
+it('is correct type', ()=> {
+    const tree = renderer
+    .create(<ButtonRow/>)
+    .toJSON();
+    expect(tree.type).toBe('div'); 
+    });
+});
 
-describe('<ButtonRow/> rendering', () => {
-    it('snapshot test buttonrow', () => {
-    let buttonRow = renderer(<ButtonRow />);
-    expect(buttonRow.toJson()).toMatchSnapshot();
-    })
-})
+describe("Sidebar section", ()=> {
+    it('renders correctly', () => {
+        const tree = renderer
+          .create(<SidebarSection categories={["Cat", "Dog", "Horse"]}/>)
+          .toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+    it('is correct type', ()=> {
+        const tree = renderer
+        .create(<SidebarSection categories={["Cat", "Dog", "Horse"]}/>)
+        .toJSON();
+        expect(tree.type).toBe('div'); 
+    });
+});
+
+describe("Sidebar content", ()=> {
+    it('renders correctly', () => {
+        const tree = renderer
+            .create(<SidebarContent categories={["Cat", "Dog", "Horse"]}/>)
+            .toJSON();
+        console.log(tree)
+        expect(tree).toMatchSnapshot();
+        });
+    it('contains sidebar content', ()=> {
+        const tree = renderer
+        .create(<SidebarContent categories={["Cat", "Dog", "Horse"]}/>)
+        .toJSON();
+        console.log(tree.children)
+        expect(tree.children).toHaveLength(3)
+    });
+});
