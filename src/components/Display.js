@@ -40,8 +40,8 @@ class Display extends React.Component {
     if (prevProps.textIndex !== this.props.textIndex || prevProps.textCategory !== this.props.textCategory) {
       this.fetchText(this.props.textIndex, this.props.textCategory)
     }
-    if (prevProps.SVGIndex !== this.props.SVGIndex || prevProps.SVGCategory !== this.props.SVGCategory) {
-      this.fetchImage(this.props.SVGIndex, this.props.SVGCategory)
+    if (prevProps.imageIndex !== this.props.imageIndex || prevProps.imageCategory !== this.props.imageCategory) {
+      this.fetchImage(this.props.imageIndex, this.props.imageCategory)
     }
     if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
       this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
