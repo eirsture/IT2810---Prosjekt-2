@@ -10,14 +10,14 @@ class Display extends React.Component {
     this.state = {
       text: '',
       image: '',
-      audio: ''
+      sound: ''
     }
   }
 
   componentDidMount() {
     this.fetchText(this.props.textIndex, this.props.textCategory)
     this.fetchImage(this.props.imageIndex, this.props.imageCategory)
-    this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
+    this.fetchSound(this.props.soundIndex, this.props.soundCategory)
   }
   
   componentDidUpdate(prevProps) {
@@ -25,7 +25,7 @@ class Display extends React.Component {
       // Switched tabs
       const response = this.retrieveFromStorage()
       if (response) {
-        this.setState({text: response.text, image: response.image, audio: response.audio})
+        this.setState({text: response.text, image: response.image, sound: response.sound})
       } else {
         this.fetchCorrectMedia(prevProps)
         this.saveToStorage()
@@ -43,8 +43,8 @@ class Display extends React.Component {
     if (prevProps.imageIndex !== this.props.imageIndex || prevProps.imageCategory !== this.props.imageCategory) {
       this.fetchImage(this.props.imageIndex, this.props.imageCategory)
     }
-    if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
-      this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
+    if (prevProps.soundIndex !== this.props.soundIndex || prevProps.soundCategory !== this.props.soundCategory) {
+      this.fetchSound(this.props.soundIndex, this.props.soundCategory)
     }
   }
 
@@ -66,15 +66,15 @@ class Display extends React.Component {
       .then(xmlData => this.setState({ image: xmlData }))
   }
 
-  fetchAudio(index, category) {
-    this.setState({ audio: `/assets/audio/${category.toLowerCase()}/${index + 1}.mp3` })
+  fetchSound(index, category) {
+    this.setState({ sound: `/assets/sound/${category.toLowerCase()}/${index + 1}.mp3` })
   }
 
   saveToStorage() {
     let data = {
       text: this.state.text,
       image: this.state.image,
-      audio: this.state.audio
+      sound: this.state.sound
     }
     if (this.props.tabId) {
       sessionStorage.setItem(this.props.tabId.toString(), JSON.stringify(data))
@@ -99,7 +99,7 @@ class Display extends React.Component {
           <CustomText text={this.state.text} />
         </div>
         <div className="sound-section">
-          <CustomSound sound={this.state.audio} />
+          <CustomSound sound={this.state.sound} />
         </div>
       </div>
     )
