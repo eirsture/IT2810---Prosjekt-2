@@ -24,32 +24,27 @@ class Display extends React.Component {
     if (prevProps.tabId !== this.props.tabId) {
       // Switched tabs
       const response = this.retrieveFromStorage()
-      console.log(response)
       if (response) {
         this.setState({text: response.text, image: response.image, audio: response.audio})
       } else {
-        if (prevProps.textIndex !== this.props.textIndex || prevProps.textCategory !== this.props.textCategory) {
-          this.fetchText(this.props.textIndex, this.props.textCategory)
-        }
-        if (prevProps.SVGIndex !== this.props.SVGIndex || prevProps.SVGCategory !== this.props.SVGCategory) {
-          this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
-        }
-        if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
-          this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
-        }
+        this.fetchCorrectMedia(prevProps)
         this.saveToStorage()
       }
     } else {
-      if (prevProps.textIndex !== this.props.textIndex || prevProps.textCategory !== this.props.textCategory) {
-        this.fetchText(this.props.textIndex, this.props.textCategory)
-      }
-      if (prevProps.SVGIndex !== this.props.SVGIndex || prevProps.SVGCategory !== this.props.SVGCategory) {
-        this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
-      }
-      if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
-        this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
-      }
+      this.fetchCorrectMedia(prevProps)
       this.saveToStorage()
+    }
+  }
+
+  fetchCorrectMedia(prevProps) {
+    if (prevProps.textIndex !== this.props.textIndex || prevProps.textCategory !== this.props.textCategory) {
+      this.fetchText(this.props.textIndex, this.props.textCategory)
+    }
+    if (prevProps.SVGIndex !== this.props.SVGIndex || prevProps.SVGCategory !== this.props.SVGCategory) {
+      this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
+    }
+    if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
+      this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
     }
   }
 
@@ -83,15 +78,15 @@ class Display extends React.Component {
     }
     if (this.props.tabId) {
       sessionStorage.setItem(this.props.tabId.toString(), JSON.stringify(data))
-    } else {
-      //console.log("tabID undefined", this.props.tabId)
     }
   }
 
   retrieveFromStorage() {
-    const response_str = sessionStorage.getItem(this.props.tabId)
-    const response = JSON.parse(response_str)
-    return response
+    if (this.props.tabId) {
+      const response_str = sessionStorage.getItem(this.props.tabId.toString())
+      const response = JSON.parse(response_str)
+      return response
+    }
   }
 
   render() {
