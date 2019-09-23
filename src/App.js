@@ -127,8 +127,8 @@ class App extends React.Component {
           <Display 
             textIndex={this.state.indices.textIndex} 
             textCategory={this.state.chosenCategories.Text} 
-            SVGIndex={this.state.indices.imageIndex}
-            SVGCategory={this.state.chosenCategories.Image} 
+            imageIndex={this.state.indices.imageIndex}
+            imageCategory={this.state.chosenCategories.Image} 
             audioIndex={this.state.indices.soundIndex}
             audioCategory={this.state.chosenCategories.Sound}
             tabId={this.state.selectedTab}

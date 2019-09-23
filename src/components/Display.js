@@ -1,6 +1,6 @@
 import React from 'react'
 import './Display.css'
-import CustomSvg from './CustomSvg.js'
+import CustomImage from './CustomImage.js'
 import CustomText from './CustomText.js'
 import CustomSound from './CustomSound.js'
 
@@ -16,7 +16,7 @@ class Display extends React.Component {
 
   componentDidMount() {
     this.fetchText(this.props.textIndex, this.props.textCategory)
-    this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
+    this.fetchImage(this.props.imageIndex, this.props.imageCategory)
     this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
   }
   
@@ -41,7 +41,7 @@ class Display extends React.Component {
       this.fetchText(this.props.textIndex, this.props.textCategory)
     }
     if (prevProps.SVGIndex !== this.props.SVGIndex || prevProps.SVGCategory !== this.props.SVGCategory) {
-      this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
+      this.fetchImage(this.props.SVGIndex, this.props.SVGCategory)
     }
     if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
       this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
@@ -60,7 +60,7 @@ class Display extends React.Component {
     }
   }
 
-  fetchSVG(index, category) {
+  fetchImage(index, category) {
     fetch(`/assets/image/${category.toLowerCase()}/${index + 1}.svg`)
       .then(response => response.text())
       .then(xmlData => this.setState({ image: xmlData }))
@@ -92,8 +92,8 @@ class Display extends React.Component {
   render() {
     return (
       <div className="display">
-        <div className="svg-section">
-          <CustomSvg image={this.state.image} />
+        <div className="image-section">
+          <CustomImage image={this.state.image} />
         </div>
         <div className="text-section">
           <CustomText text={this.state.text} />
