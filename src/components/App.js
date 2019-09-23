@@ -1,8 +1,8 @@
 import React from 'react'
 import './App.css'
-import Sidebar from './components/sidebarContent'
-import ButtonRow from './components/ButtonRow'
-import Display from './components/Display'
+import Sidebar from './Sidebar/sidebarContent'
+import ButtonRow from './ButtonRow/ButtonRow'
+import Display from './Display/Display'
 
 class App extends React.Component {
   

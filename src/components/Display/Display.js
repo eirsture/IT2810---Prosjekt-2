@@ -1,8 +1,8 @@
 import React from 'react'
 import './Display.css'
-import CustomImage from './CustomImage.js'
-import CustomText from './CustomText.js'
-import CustomSound from './CustomSound.js'
+import CustomImage from '../CustomMedia/CustomImage.js'
+import CustomText from '../CustomMedia/CustomText.js'
+import CustomSound from '../CustomMedia/CustomSound.js'
 
 class Display extends React.Component {
   constructor(props) {
