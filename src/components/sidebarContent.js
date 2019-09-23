@@ -8,11 +8,11 @@ class SidebarContent extends React.Component {
                 <div className="Image">
                     <SidebarSection title="Image" categories={this.props.categories} selectedCategory={this.props.selectedCategory}/>
                 </div>
-                <div className="Sound">
-                    <SidebarSection title="Sound" categories={this.props.categories} selectedCategory={this.props.selectedCategory}/>
-                </div>
                 <div className="Text">
                     <SidebarSection title="Text" categories={this.props.categories} selectedCategory={this.props.selectedCategory}/>
+                </div>
+                <div className="Sound">
+                    <SidebarSection title="Sound" categories={this.props.categories} selectedCategory={this.props.selectedCategory}/>
                 </div>
             </div>
         )

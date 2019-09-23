@@ -96,11 +96,9 @@ class Display extends React.Component {
           <CustomSvg image={this.state.image} />
         </div>
         <div className="text-section">
-          <h2>Text</h2>
           <CustomText text={this.state.text} />
         </div>
         <div className="sound-section">
-          <h2>Sound</h2>
           <CustomSound sound={this.state.audio} />
         </div>
       </div>
