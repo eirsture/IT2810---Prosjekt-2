@@ -34,7 +34,7 @@ class SidebarSection extends React.Component {
                 <form>
                     {
                         this.props.categories.map((category, index) => {
-                            return  <div className={this.state.selectedCategory === category ? "radio active" : "radio"}>
+                            return  <div key={index} className={this.state.selectedCategory === category ? "radio active" : "radio"}>
                                         <label>
                                         <input type="radio" 
                                             value={category}
