@@ -118,7 +118,7 @@ class App extends React.Component {
             <path d="M27 14.6053L25.59 13.1953L20 18.7853L14.41 13.1953L13 14.6053L18.59 20.1953L13 25.7853L14.41 27.1953L20 21.6053L25.59 27.1953L27 25.7853L21.41 20.1953L27 14.6053Z" fill="#FF7F50"/>
             </svg>
           </div>
-          <h2 id="project-title">Prosjekt 2 - Gruppe 16</h2>
+          <h2 id="project-title">Project 2 - Group 16</h2>
         </header>
         <div id="sidebar">
           <Sidebar categories={["Cat", "Dog", "Horse"]} selectedCategory={this.selectedCategory} />
