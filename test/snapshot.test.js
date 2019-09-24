@@ -1,8 +1,5 @@
 import React from 'react'
 import renderer from 'react-test-renderer';
-import { create, act } from "react-test-renderer";
-import App from "../src/App.js";
-import CustomSvg from '../src/components/CustomSvg.js';
 import ButtonRow from '../src/components/ButtonRow.js';
 import SidebarContent from '../src/components/sidebarContent.js';
 import SidebarSection from '../src/components/sidebarSection.js';
