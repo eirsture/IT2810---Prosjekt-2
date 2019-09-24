@@ -2,15 +2,15 @@
 
 ## Functionality
 
-The user can choose between 3 cetegories of pictures, text and sound. Based on these choices, 4 combinations will be generated and are available in the different tabs. The first exhibition is randomly generated based on the initial categories, unless a combination has been stored locally. The exhibition updates dynamically when changing categories.
+The user can choose between 3 categories of pictures, text and sound. Based on these choices, 4 combinations will be generated and are available in the different tabs. The first exhibition is randomly generated based on the initial categories, unless a combination has been stored locally. The exhibition updates dynamically when changing categories.
 
 ## Technology
 
 ### React
-The solution uses React with classes and functional components implemented with the JSX and ES6 syntax, and are implemented from scratch. Only default React mechanisms are used to do state handling.
+The solution uses React with classes and functional components implemented with the JSX and ES6 syntax, and are implemented from scratch. Only default React mechanisms are used to do state handling. Simple components are made using stateless functional components, while the more advanced components that need to store state and need various helper functions, are made as classes.
 
 ### Ajax
-Media gets fetched when used and is then saved locally at the client. If needed, the data is read from the local storage and not fetched remotely. To fetch data the first time we use Ajax, where SVGs are read as XML and text as JSON.
+Media gets fetched when used and is then saved locally at the client. If needed, the data is read from the session storage and not fetched remotely. To fetch data the first time we use Ajax, where SVGs are read as XML and text as JSON.
 
 ### HTML Web Storage
 We use both sessionStorage and localStorage in the solution. sessionStorage is used to save the content of each tab and localStorage saves the last state, so you can close the browser and reopen the page to get the same combination of categories and media.
@@ -21,8 +21,14 @@ The exhibition is responsive and scaled for laptops, tablet and mobile devices. 
 ## Available Scripts
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Before you can run run the app you will need to download and install [Node.js and npm (node package manager).](https://www.npmjs.com/get-npm)
 
-In the project directory, you can run:
+
+In the project directory after it is cloned and npm is installed, you can run:
+
+### 'npm install'
+
+Installs all the dependencies needed for the project.
 
 ### `npm start`
 
