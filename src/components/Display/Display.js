@@ -50,7 +50,7 @@ class Display extends React.Component {
 
   fetchText(index, category) {
     if (category) {
-      fetch(`/assets/text/${category.toLowerCase()}/text.json`)
+      fetch(`./assets/text/${category.toLowerCase()}/text.json`)
       .then(function(response) {
         return response.json()
       })
@@ -62,7 +62,7 @@ class Display extends React.Component {
 
   fetchImage(index, category) {
     if (category) {
-      fetch(`/assets/image/${category.toLowerCase()}/${index + 1}.svg`)
+      fetch(`./assets/image/${category.toLowerCase()}/${index + 1}.svg`)
         .then(response => response.text())
         .then(xmlData => this.setState({ image: xmlData }))
     }
@@ -70,7 +70,7 @@ class Display extends React.Component {
 
   fetchSound(index, category) {
     if (category) {
-      this.setState({ sound: `/assets/sound/${category.toLowerCase()}/${index + 1}.mp3` })
+      this.setState({ sound: `./assets/sound/${category.toLowerCase()}/${index + 1}.mp3` })
     }
   }
 
