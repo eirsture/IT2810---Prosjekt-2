@@ -35,7 +35,22 @@ This works by taking a snapshot of the current code and then compares it to a la
 We have used snapshot test for the buttonRow component, and Sidebar components. We have choosen to take snapshot test of the components, because it is important
 to test the building blocks of the website. 
 
-We have also tested the website on different devices and browsers. Both different sizes of computer screens and mobile devices, in landscape and portrait mode. The responsiveness of the website is behaving as we expect it to. 
+We have also tested the website on different devices and browsers. Both different sizes of computer screens and mobile devices, in landscape and portrait mode. The responsiveness of the website is behaving as we expect it to.
+
+This is tested on devices such as:
+*  iPhone X
+*  iPhone 5/SE
+*  iPhone 6/7/8
+*  Pixel 2
+*  Pixel 2 XL
+*  iPad
+*  iPad Pro
+
+and the following browsers:
+*  Google Chrome
+*  Firefox
+*  Microsoft Edge
+*  Safari
 
 ## Available Scripts
 
