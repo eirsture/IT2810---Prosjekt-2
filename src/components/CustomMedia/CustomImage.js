@@ -1,10 +1,10 @@
 import React from 'react'
-import './CustomSVG.css'
+import './CustomImage.css'
 
-const CustomSvg = ({ image }) => {
+const CustomImage = ({ image }) => {
   return (
     <div className="imageContainer" dangerouslySetInnerHTML={{__html: image}} />
   )
 }
 
-export default CustomSvg;
+export default CustomImage;

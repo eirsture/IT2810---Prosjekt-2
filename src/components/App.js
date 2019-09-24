@@ -1,8 +1,8 @@
 import React from 'react'
 import './App.css'
-import Sidebar from './components/sidebarContent'
-import ButtonRow from './components/ButtonRow'
-import Display from './components/Display'
+import Sidebar from './Sidebar/sidebarContent'
+import ButtonRow from './ButtonRow/ButtonRow'
+import Display from './Display/Display'
 
 class App extends React.Component {
   
@@ -91,7 +91,7 @@ class App extends React.Component {
     try {
       this.setState({chosenCategories: locallyStorage.chosenCategories})
       this.setState({indices: locallyStorage.indices})
-      this.setState({selectedTab: locallyStorage.tab})
+      this.setState({selectedTab: locallyStorage.selectedTab})
     } catch (error) {
       console.log("Error when parsing localStorage state")
       this.setState({chosenCategories: {Image:'Cat', Sound:'Cat', Text:'Cat'} })
@@ -118,7 +118,7 @@ class App extends React.Component {
             <path d="M27 14.6053L25.59 13.1953L20 18.7853L14.41 13.1953L13 14.6053L18.59 20.1953L13 25.7853L14.41 27.1953L20 21.6053L25.59 27.1953L27 25.7853L21.41 20.1953L27 14.6053Z" fill="#FF7F50"/>
             </svg>
           </div>
-          <h2 id="project-title">Prosjekt 2 - Gruppe 16</h2>
+          <h2 id="project-title">Project 2 - Group 16</h2>
         </header>
         <div id="sidebar">
           <Sidebar categories={["Cat", "Dog", "Horse"]} selectedCategory={this.selectedCategory} />
@@ -127,10 +127,10 @@ class App extends React.Component {
           <Display 
             textIndex={this.state.indices.textIndex} 
             textCategory={this.state.chosenCategories.Text} 
-            SVGIndex={this.state.indices.imageIndex}
-            SVGCategory={this.state.chosenCategories.Image} 
-            audioIndex={this.state.indices.soundIndex}
-            audioCategory={this.state.chosenCategories.Sound}
+            imageIndex={this.state.indices.imageIndex}
+            imageCategory={this.state.chosenCategories.Image} 
+            soundIndex={this.state.indices.soundIndex}
+            soundCategory={this.state.chosenCategories.Sound}
             tabId={this.state.selectedTab}
           />
         </div>

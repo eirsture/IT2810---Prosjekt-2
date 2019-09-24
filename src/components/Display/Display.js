@@ -1,8 +1,8 @@
 import React from 'react'
 import './Display.css'
-import CustomSvg from './CustomSvg.js'
-import CustomText from './CustomText.js'
-import CustomSound from './CustomSound.js'
+import CustomImage from '../CustomMedia/CustomImage.js'
+import CustomText from '../CustomMedia/CustomText.js'
+import CustomSound from '../CustomMedia/CustomSound.js'
 
 class Display extends React.Component {
   constructor(props) {
@@ -10,14 +10,14 @@ class Display extends React.Component {
     this.state = {
       text: '',
       image: '',
-      audio: ''
+      sound: ''
     }
   }
 
   componentDidMount() {
     this.fetchText(this.props.textIndex, this.props.textCategory)
-    this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
-    this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
+    this.fetchImage(this.props.imageIndex, this.props.imageCategory)
+    this.fetchSound(this.props.soundIndex, this.props.soundCategory)
   }
   
   componentDidUpdate(prevProps) {
@@ -25,7 +25,7 @@ class Display extends React.Component {
       // Switched tabs
       const response = this.retrieveFromStorage()
       if (response) {
-        this.setState({text: response.text, image: response.image, audio: response.audio})
+        this.setState({text: response.text, image: response.image, sound: response.sound})
       } else {
         this.fetchCorrectMedia(prevProps)
         this.saveToStorage()
@@ -40,11 +40,11 @@ class Display extends React.Component {
     if (prevProps.textIndex !== this.props.textIndex || prevProps.textCategory !== this.props.textCategory) {
       this.fetchText(this.props.textIndex, this.props.textCategory)
     }
-    if (prevProps.SVGIndex !== this.props.SVGIndex || prevProps.SVGCategory !== this.props.SVGCategory) {
-      this.fetchSVG(this.props.SVGIndex, this.props.SVGCategory)
+    if (prevProps.imageIndex !== this.props.imageIndex || prevProps.imageCategory !== this.props.imageCategory) {
+      this.fetchImage(this.props.imageIndex, this.props.imageCategory)
     }
-    if (prevProps.audioIndex !== this.props.audioIndex || prevProps.audioCategory !== this.props.audioCategory) {
-      this.fetchAudio(this.props.audioIndex, this.props.audioCategory)
+    if (prevProps.soundIndex !== this.props.soundIndex || prevProps.soundCategory !== this.props.soundCategory) {
+      this.fetchSound(this.props.soundIndex, this.props.soundCategory)
     }
   }
 
@@ -60,21 +60,25 @@ class Display extends React.Component {
     }
   }
 
-  fetchSVG(index, category) {
-    fetch(`/assets/image/${category.toLowerCase()}/${index + 1}.svg`)
-      .then(response => response.text())
-      .then(xmlData => this.setState({ image: xmlData }))
+  fetchImage(index, category) {
+    if (category) {
+      fetch(`/assets/image/${category.toLowerCase()}/${index + 1}.svg`)
+        .then(response => response.text())
+        .then(xmlData => this.setState({ image: xmlData }))
+    }
   }
 
-  fetchAudio(index, category) {
-    this.setState({ audio: `/assets/audio/${category.toLowerCase()}/${index + 1}.mp3` })
+  fetchSound(index, category) {
+    if (category) {
+      this.setState({ sound: `/assets/sound/${category.toLowerCase()}/${index + 1}.mp3` })
+    }
   }
 
   saveToStorage() {
     let data = {
       text: this.state.text,
       image: this.state.image,
-      audio: this.state.audio
+      sound: this.state.sound
     }
     if (this.props.tabId) {
       sessionStorage.setItem(this.props.tabId.toString(), JSON.stringify(data))
@@ -92,14 +96,14 @@ class Display extends React.Component {
   render() {
     return (
       <div className="display">
-        <div className="svg-section">
-          <CustomSvg image={this.state.image} />
+        <div className="image-section">
+          <CustomImage image={this.state.image} />
         </div>
         <div className="text-section">
           <CustomText text={this.state.text} />
         </div>
         <div className="sound-section">
-          <CustomSound sound={this.state.audio} />
+          <CustomSound sound={this.state.sound} />
         </div>
       </div>
     )
