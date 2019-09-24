@@ -21,6 +21,7 @@ The exhibition is responsive and scaled for laptops, tablet and mobile devices. 
 ## Available Scripts
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 Before you can run run the app you will need to download and install [Node.js and npm (node package manager).](https://www.npmjs.com/get-npm)
 
 
