@@ -1,3 +1,13 @@
+# IT2810 - Project 2 - Group 16
+This is a project for the course Web Development (IT2810) at NTNU, fall 2019.
+
+The project can be found [here](http://it2810-16.idi.ntnu.no/prosjekt2/)
+
+## Contributors
+*  [Kim André Midtlid](https://github.com/kamidtli)
+*  [Eirik Sture](https://github.com/eirsture)
+*  [Sebastian Aas](https://github.com/SebastianAas)
+
 # Documentation
 
 ## Functionality
@@ -25,7 +35,7 @@ This works by taking a snapshot of the current code and then compares it to a la
 We have used snapshot test for the buttonRow component, and Sidebar components. We have choosen to take snapshot test of the components, because it is important
 to test the building blocks of the website. 
 
-We have also tested the website on different devices. Both different sizes of computer screens and mobile devices. The responsiveness of the website is behaving as we expect it to. 
+We have also tested the website on different devices and browsers. Both different sizes of computer screens and mobile devices, in landscape and portrait mode. The responsiveness of the website is behaving as we expect it to. 
 
 ## Available Scripts
 
@@ -52,33 +62,3 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
