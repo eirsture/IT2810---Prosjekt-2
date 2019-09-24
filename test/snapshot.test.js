@@ -9,7 +9,6 @@ it('renders correctly', () => {
     const tree = renderer
       .create(<ButtonRow/>)
       .toJSON();
-    console.log(tree)
     expect(tree).toMatchSnapshot();
   });
 it('is correct type', ()=> {
@@ -40,14 +39,12 @@ describe("Sidebar content", ()=> {
         const tree = renderer
             .create(<SidebarContent categories={["Cat", "Dog", "Horse"]}/>)
             .toJSON();
-        console.log(tree)
         expect(tree).toMatchSnapshot();
         });
     it('contains sidebar content', ()=> {
         const tree = renderer
         .create(<SidebarContent categories={["Cat", "Dog", "Horse"]}/>)
         .toJSON();
-        console.log(tree.children)
         expect(tree.children).toHaveLength(3)
     });
 });
