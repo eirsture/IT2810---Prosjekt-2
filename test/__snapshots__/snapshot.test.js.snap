@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Row component renders correctly 1`] = `
+<div
+  className="buttons"
+>
+  <div
+    className="selected button"
+    id={1}
+    onClick={[Function]}
+  >
+    <p
+      className="title"
+    >
+      1
+    </p>
+  </div>
+  <div
+    className="hidden button"
+    id={2}
+    onClick={[Function]}
+  >
+    <p
+      className="title"
+    >
+      2
+    </p>
+  </div>
+  <div
+    className="hidden button"
+    id={3}
+    onClick={[Function]}
+  >
+    <p
+      className="title"
+    >
+      3
+    </p>
+  </div>
+  <div
+    className="hidden button"
+    id={4}
+    onClick={[Function]}
+  >
+    <p
+      className="title"
+    >
+      4
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Sidebar content renders correctly 1`] = `
+<div
+  className="wrapper"
+>
+  <div
+    className="Image"
+  >
+    <div
+      className="sectionContainer"
+    >
+      <h3>
+        Image
+      </h3>
+      <form>
+        <div
+          className="radio active"
+        >
+          <label>
+            <input
+              checked={true}
+              onChange={[Function]}
+              type="radio"
+              value="Cat"
+            />
+            Cat
+          </label>
+        </div>
+        <div
+          className="radio"
+        >
+          <label>
+            <input
+              checked={false}
+              onChange={[Function]}
+              type="radio"
+              value="Dog"
+            />
+            Dog
+          </label>
+        </div>
+        <div
+          className="radio"
+        >
+          <label>
+            <input
+              checked={false}
+              onChange={[Function]}
+              type="radio"
+              value="Horse"
+            />
+            Horse
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="Text"
+  >
+    <div
+      className="sectionContainer"
+    >
+      <h3>
+        Text
+      </h3>
+      <form>
+        <div
+          className="radio active"
+        >
+          <label>
+            <input
+              checked={true}
+              onChange={[Function]}
+              type="radio"
+              value="Cat"
+            />
+            Cat
+          </label>
+        </div>
+        <div
+          className="radio"
+        >
+          <label>
+            <input
+              checked={false}
+              onChange={[Function]}
+              type="radio"
+              value="Dog"
+            />
+            Dog
+          </label>
+        </div>
+        <div
+          className="radio"
+        >
+          <label>
+            <input
+              checked={false}
+              onChange={[Function]}
+              type="radio"
+              value="Horse"
+            />
+            Horse
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="Sound"
+  >
+    <div
+      className="sectionContainer"
+    >
+      <h3>
+        Sound
+      </h3>
+      <form>
+        <div
+          className="radio active"
+        >
+          <label>
+            <input
+              checked={true}
+              onChange={[Function]}
+              type="radio"
+              value="Cat"
+            />
+            Cat
+          </label>
+        </div>
+        <div
+          className="radio"
+        >
+          <label>
+            <input
+              checked={false}
+              onChange={[Function]}
+              type="radio"
+              value="Dog"
+            />
+            Dog
+          </label>
+        </div>
+        <div
+          className="radio"
+        >
+          <label>
+            <input
+              checked={false}
+              onChange={[Function]}
+              type="radio"
+              value="Horse"
+            />
+            Horse
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Sidebar section renders correctly 1`] = `
+<div
+  className="sectionContainer"
+>
+  <h3 />
+  <form>
+    <div
+      className="radio active"
+    >
+      <label>
+        <input
+          checked={true}
+          onChange={[Function]}
+          type="radio"
+          value="Cat"
+        />
+        Cat
+      </label>
+    </div>
+    <div
+      className="radio"
+    >
+      <label>
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="radio"
+          value="Dog"
+        />
+        Dog
+      </label>
+    </div>
+    <div
+      className="radio"
+    >
+      <label>
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="radio"
+          value="Horse"
+        />
+        Horse
+      </label>
+    </div>
+  </form>
+</div>
+`;
