@@ -11,7 +11,7 @@ class App extends React.Component {
     this.state = {
       chosenCategories: {Image:'', Sound:'', Text:'' },
       indices: {imageIndex: 0, soundIndex: 0, textIndex: 0},
-      selectedTab: 1
+      selectedTab: null
     }
   }
 
