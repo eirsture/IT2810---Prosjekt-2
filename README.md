@@ -26,7 +26,7 @@ Before you can run run the app you will need to download and install [Node.js an
 
 In the project directory after it is cloned and npm is installed, you can run:
 
-### 'npm install'
+### `npm install`
 
 Installs all the dependencies needed for the project.
 
