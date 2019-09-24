@@ -18,6 +18,15 @@ We use both sessionStorage and localStorage in our solution. sessionStorage is u
 ### Responsive web design
 The exhibition is responsive and scaled for laptops, tablet and mobile devices. Viewport is used to achieve full height and width, and CSS-grid is then used to group the different components. We use this solution combined with media queries to make it easy to change the layout dependent on the device size. We also use media queries to change between landscape and portrait format, and have breakpoints at 768px and 576px. The images scale appropriately to the screen size.
 
+### Testing
+We have used Jest as a framework for testing the webpage. Jest is a JavaScript Testing framework with a focus on simplicity. Jest has something called a snapshot test, which is a test that makes sure your UI doesn't change unexpectedly.
+This works by taking a snapshot of the current code and then compares it to a later snapshot. 
+
+We have used snapshot test for the buttonRow component, and Sidebar components. We have choosen to take snapshot test of the components, because it is important
+to test the building blocks of the website. 
+
+We have also tested the website on different devices. Both different sizes of computer screens and mobile devices. The responsiveness of the website is behaving as we expect it to. 
+
 ## Available Scripts
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
