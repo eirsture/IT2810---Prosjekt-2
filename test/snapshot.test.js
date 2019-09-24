@@ -1,8 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer';
-import ButtonRow from '../src/components/ButtonRow.js';
-import SidebarContent from '../src/components/sidebarContent.js';
-import SidebarSection from '../src/components/sidebarSection.js';
+import ButtonRow from '../src/components/ButtonRow/ButtonRow.js';
+import SidebarContent from '../src/components/Sidebar/sidebarContent.js';
+import SidebarSection from '../src/components/Sidebar/sidebarSection.js';
 
 describe("Button Row component", ()=> {
 it('renders correctly', () => {

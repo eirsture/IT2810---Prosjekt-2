@@ -2,7 +2,6 @@
   "name": "project2",
   "version": "0.1.0",
   "private": true,
-  
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -15,9 +14,15 @@
     "eject": "react-scripts eject"
   },
   "jest": {
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "bower_components", "shared"],
-
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/empty-module.js",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
