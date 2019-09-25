@@ -1,0 +1,32 @@
+
+.title {
+    font-size: 20px;
+}
+
+.button {
+    margin: 0 5px;
+    height: 75%;
+    width: 100%;    
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+}
+
+.button:hover {
+    background-color: coral;
+    border-radius: 20px 20px 0 0;
+}
+
+.selected {
+    background-color: coral;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 768px){
+    .selected {
+        box-shadow: none;
+        border-bottom: none;
+    }
+}
